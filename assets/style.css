@@ -6,43 +6,56 @@
 
 /*The main variable roots*/
 :root {
-    --main-color: steelblue;
+    --main-color: rgb(40, 47, 78);
     --purple-color: #84568d;
     --black: #000000;
+    --text-color: white;
 }
 
 body{
-    background-color:var(--main-color);
+    background-color:var(--black);
 }
 
+/*So that we don't change the color when link is pressed*/
+a, a:visited {
+    color:inherit;
+    text-decoration: underline;
+}
+
+/*Main hero image at the beginning*/
 .hero {
-    height: 500px;
+    height: 730px;
     width: 100%;
     margin-bottom: 25px;
-    background-image: url("../images/portfolio_picture.jpg");
+    background-image: url("images/fire-0.png"); 
     background-size: cover;
     background-position: center;
 }
 
+/*Header things needed*/
 .header{
     font-family: fantasy;
     padding: 20px;
-    background-color: var(--purple-color);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--text-color);
+    display:flex;
+    align-items: baseline;
 }
 
 .header h1{
     display: inline-block;
-
 }
 
 .header nav{
     padding-top: 15px;
     margin-right: 20px;
     float: right;
-    position: relative;
+    padding: 10px 0px 0 50px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 .header nav ul {
@@ -51,72 +64,101 @@ body{
 
 .header nav ul li {
     display: inline-block;
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 /*main content section*/
 .content {
- display: flex;
- flex-direction: column;
- justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .content h2 {
     font-size: xx-large;
 }
 
-/*The about me stuff*/
+/*The ABOUT ME stuff*/
 
 .about_me {
     background-color: rgb(149, 87, 155);
-    position:absolute;
-    column-width: 490px;
 }
 
 .about_me h2{
-    text-shadow: white;
+    text-shadow:2px 2px white;
+    font-size: 55px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 10px 10px 60px 20px;
+    border-right: 8px solid;
+    border-color: #000000;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.about_me h2 img{
+    width: 200px;
+
+    
+}
+
+.about_me p{
+    text-align: center;
+    padding: 10px 10px 60px 300px;
+
 }
 
 /*Use flexbox for oganizing the personal content*/
 .personal_work{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+    background-color: var(--purple-color);
 
 }
 
-/*.work{
-    flex: 0 1 100%;
-    margin: 0 10px 10px 0;
-    border: 1px solid rgb(95, 32, 32);
-    box-shadow: 1px 1px 3px #888;
-}*/
+.personal_work h2{
+    margin-left: 0px;
+    text-shadow:2px 2px white;
+    font-size: 55px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 10px 10px 60px 20px;
+    border-right: 8px solid;
+    border-color: #000000;
+
+}
+
+.work_container{
+    /* create flexbox */
+    display: flex;
+    /* instruct it to break onto next line if it runs out of space */
+    flex-wrap: wrap;
+    /* put all unused space between items */
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+}
+
 
 .the_work {
-      /* make each one 45%, putting 10% between each element on the page */
+  /* make each one 45%, putting 10% between each element on the page */
   width: 45%;
   /* rounded corners */
   border-radius: 14px;
-  border: 4px solid #fb3e55;
-  background-color: #393b4f;
+  border: 4px solid #000000;
   font-size: 22px;
   font-weight: bold;
-
   margin-bottom: 15px;
+  box-shadow: 0 3000px rgba(204, 0, 255, 0.4) inset; 
 
-  /* for files in local images folder, use url('../images/file-name.jpg') */
- background-image: url('https://via.placeholder.com/1000/393b4f/fb3e55?text=Placeholder');*/
 
   /* tell background to fit box no matter what */
   background-size: cover;
-
   /* crop it at the center */
   background-position: center;
-
   /* padding top and bottom 20px, 0 for left/right */
   padding: 20px 0;
-
   /* set minimum heigh value so there's room */
   min-height: 250px;
 
@@ -124,6 +166,33 @@ body{
   display: flex;
   flex-direction: column;
 
+}
+
+/*All the backgrounds for flexbox needs*/
+.the_work:nth-child(1) {
+    background-image: url(images/maya_animation.jpeg);
+}
+
+.the_work:nth-child(2) {
+
+    background-image: url(images/run_buddy.png);
+}
+
+.the_work:nth-child(3) {
+    background-image: url(images/coming_out.png);
+}
+
+.the_work:nth-child(4) {
+    background-image: url(images/sudoku.png);
+}
+
+.the_work:nth-child(5) {
+    background-image: url(images/blackjack-hand.jpg);
+}
+
+/*When hovering over flexbox work, the color changes*/
+.the_work:hover{
+    box-shadow: 0 3000px rgba(255, 255, 255, 0) inset;
 }
 
 /* for text area inside of flex item */
@@ -137,6 +206,11 @@ body{
     text-align: center;
   }
 
+
+.contact_me{
+    display:flex;
+}
+
 .contact_me div{
     padding-top: 15px;
     margin-right: 20px;
@@ -144,4 +218,26 @@ body{
     position: relative;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
+    color:rgb(255, 0, 0);
+}
+
+.contact_me h2{
+    color: red;
+    margin-left: 0px;
+    text-shadow:2px 2px white;
+    font-size: 55px;
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 10px 10px 60px 20px;
+    border-right: 8px solid;
+    border-color: #ffffff; 
+}
+
+.contact_me div ul {
+    list-style-type: none;
+}
+
+.header div ul li {
+    display: inline-block;
+    margin-left: 25px;
 }
