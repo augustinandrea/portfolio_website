@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*The main variable roots*/
+:root {
+    --main-color: steelblue;
+    --purple-color: #84568d;
+    --black: #000000;
+}
+
+body{
+    background-color:var(--main-color);
+}
+
+.hero {
+    height: 500px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("../images/portfolio_picture.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+    font-family: fantasy;
+    padding: 20px;
+    background-color: var(--purple-color);
+    color: var(--black);
+}
+
+.header h1{
+    display: inline-block;
+
+}
+
+.header nav{
+    padding-top: 15px;
+    margin-right: 20px;
+    float: right;
+    position: relative;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.header nav ul {
+    list-style-type: none;
+}
+
+.header nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/*main content section*/
+.content {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+
+.content h2 {
+    font-size: xx-large;
+}
+
+/*The about me stuff*/
+
+.about_me {
+    background-color: rgb(149, 87, 155);
+    position:absolute;
+    column-width: 490px;
+}
+
+.about_me h2{
+    text-shadow: white;
+}
+
+/*Use flexbox for oganizing the personal content*/
+.personal_work{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+/*.work{
+    flex: 0 1 100%;
+    margin: 0 10px 10px 0;
+    border: 1px solid rgb(95, 32, 32);
+    box-shadow: 1px 1px 3px #888;
+}*/
+
+.the_work {
+      /* make each one 45%, putting 10% between each element on the page */
+  width: 45%;
+  /* rounded corners */
+  border-radius: 14px;
+  border: 4px solid #fb3e55;
+  background-color: #393b4f;
+  font-size: 22px;
+  font-weight: bold;
+
+  margin-bottom: 15px;
+
+  /* for files in local images folder, use url('../images/file-name.jpg') */
+ background-image: url('https://via.placeholder.com/1000/393b4f/fb3e55?text=Placeholder');*/
+
+  /* tell background to fit box no matter what */
+  background-size: cover;
+
+  /* crop it at the center */
+  background-position: center;
+
+  /* padding top and bottom 20px, 0 for left/right */
+  padding: 20px 0;
+
+  /* set minimum heigh value so there's room */
+  min-height: 250px;
+
+  /* rather than use position...use flexbox and create column instead of row */
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* for text area inside of flex item */
+.the_work span {
+    /* pushes element to bottom of flex item */
+    margin-top: auto;
+    width: 100%;
+    background-color: #a8adba;
+    color: #393b4f;
+    padding: 10px 5px;
+    text-align: center;
+  }
+
+.contact_me div{
+    padding-top: 15px;
+    margin-right: 20px;
+    float: right;
+    position: relative;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
