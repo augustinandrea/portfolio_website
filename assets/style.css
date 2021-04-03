@@ -7,7 +7,6 @@
 
 /*The main variable roots*/
 :root {
-
     --sandy-brown: #F29E50;
     --chocolate: #7A3701;
     --crayola: #FFCF7B;
@@ -30,7 +29,7 @@ a, a:visited {
 
 /*Main hero image at the beginning*/
 .hero {
-    height: 730px;
+    height: 700px;
     width: 100%;
     margin-bottom: 25px;
     background-image: url("images/fire-0.png"); 
@@ -39,28 +38,29 @@ a, a:visited {
 }
 
 /*Header things needed*/
-.header{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.header {
     padding: 20px;
     background-color: var(--chocolate);
     color: var(--crayola);
     display:flex;
+    justify-content: space-between;
     align-items: baseline;
 }
 
 .header h1{
     display: inline-block;
+    font-size: 45px;
+    text-shadow: 4px 4px var(--black);
+
 }
 
 .header nav{
-    padding-top: 15px;
-    margin-right: 20px;
+    
+    margin-left: 30px;
     float: right;
-    padding: 10px 0px 0 70px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 90px;
     font-size: 20px;
     display: flex;
-    justify-content: flex-end;
 }
 
 .header nav ul {
@@ -72,7 +72,7 @@ a, a:visited {
     margin-left: 30px;
 }
 
-/*main content section*/
+/*-----main content section-----*/
 .content {
     display: flex;
     flex-direction: column;
@@ -80,6 +80,7 @@ a, a:visited {
     width: 100%;
 }
 
+/*Create a flexbox for the content on one side to evenly have the headers*/
 .content h2 {
     font-size: 55px;
     color: var(--black);
@@ -87,49 +88,54 @@ a, a:visited {
     border-right: 8px solid;
     border-color: var(--chocolate-web);
     padding: 10px 10px 60px 20px;
+    text-align: right;
 
     margin-left: 0px;
     margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*only the content*/
+.about_me p, .work_container, .contacts{
+    display: flex;
+    flex-direction: row;
+    /* instruct it to break onto next line if it runs out of space */
+    flex-wrap: wrap;
+    /* put all unused space between items */
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
 }
 
 /*The ABOUT ME stuff---------------------------*/
 
 /*flexbox the design for the header and stuff*/
 .about_me {
-    background-color: var(--chocolate);
+    margin-left: 33px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-
 }
 
 .about_me h2{
-    margin-left: 0px;
     text-align: right;
-    margin-bottom: 35px; 
-    margin-top: 40px;
 }
 
 .about_me h2 img{
     width: 205px;
-    padding: 40px 20px 20px 20px; 
+    margin-top: 20px;
 }
 
 .about_me p{
     font-size: 20px;
-    padding: 10px 50px 60px 60px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
+    padding: 40px 50px 60px 60px;
     width: 80%;
-    margin: 0 auto;
+    text-align: center;
+    
 }
 
 /*Use flexbox for oganizing the personal content*/
 .personal_work{
-    background-color: var(--chocolate);
     display: flex;
     flex-direction: row;
 }
@@ -152,9 +158,9 @@ a, a:visited {
 
 .the_work {
     /* make each one 45%, putting 10% between each element on the page */
-    width: 45%;
+    min-width: 45%;
     /* rounded corners */
-    border-radius: 14px;
+    border-radius: 6px;
     border: 4px solid var(--sandy-brown);
     font-size: 22px;
     font-weight: bold;
@@ -170,7 +176,6 @@ a, a:visited {
     padding: 20px 0;
     /* set minimum heigh value so there's room */
     min-height: 250px;
-
     /* rather than use position...use flexbox and create column instead of row */
     display: flex;
     flex-direction: column;
@@ -180,7 +185,7 @@ a, a:visited {
 /*All the backgrounds for flexbox needs*/
 .the_work:nth-child(1) {
     min-height: 500px;
-    min-width: 900px;
+    width: 100%;
     background-image: url(images/maya_animation.jpeg);
 }
 
@@ -220,30 +225,26 @@ a, a:visited {
 /*CONTACT ME section of stuff*/
 .contact_me{
     display:flex;
-}
-
-.contacts{
-    padding-top: 15px;
-    margin-right: 20px;
-    float: right;
-    position: relative;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
-    color: var(--crayola);
-    display: flex;
+    align-items: baseline;
     flex-direction: row;
 }
 
 .contact_me h2{
+    text-align: right;
+    margin-left: 55px;
+    
+}
+
+.contacts{
+    padding-top: 70px;
+    float: right;
+    position: relative;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
     color: var(--black);
-    margin-left: 0px;
-    text-shadow:2px 2px var(--chocolate-web);
-    font-size: 55px;
-    text-align: center;
-    margin-bottom: 35px;
-    padding: 10px 10px 60px 20px;
-    border-right: 8px solid;
-    border-color: var(--chocolate-web); 
+    display: flex;
+
+    flex-direction: row;
 }
 
 .contacts ul {
@@ -260,4 +261,15 @@ a, a:visited {
 footer{
     margin-left: 10px;
     color: var(--crayola);
+}
+
+/*---media query---*/
+
+@media screen and (min-width: 768px){
+    .hero{
+        height: 500px;
+    }
+
+
+
 }
