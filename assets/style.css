@@ -305,6 +305,10 @@ footer{
         padding: 10px 10px 10px 10px;
     }
 
+    .the_work{
+        min-height: 200px;
+    }
+
 }
 
 @media screen and (max-width: 575px){
