@@ -33,7 +33,7 @@ a, a:visited {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 700px;
+    height: 400px;
 }
 
 /*Header things needed*/
@@ -51,7 +51,6 @@ a, a:visited {
     text-shadow: 4px 4px var(--black);
     margin: 0;
 }
-
 
 .header nav{
     margin: 7px 0;
@@ -83,66 +82,51 @@ a, a:visited {
 }
 
 /*Create a flexbox for the content on one side to evenly have the headers*/
-.content h2 {
-    font-size: 55px;
+article h2 {
+    font-size: 50px;
     color: var(--black);
     text-shadow:2px 2px var(--sandy-brown);
     border-right: 8px solid;
     border-color: var(--chocolate-web);
     padding: 10px 10px 60px 20px;
     text-align: right;
-
+    flex: 0 0 20%;
     margin-left: 0px;
     margin-bottom: 35px;
-    display: flex;
-    flex-direction: column;
 
-}
-
-/*only the content*/
-.about_me p, .work_container, .contacts{
-    display: flex;
-    flex-direction: row;
-    /* put all unused space between items */
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px 20px 20px 20px;
 }
 
 /*The ABOUT ME stuff---------------------------*/
-
-/*flexbox the design for the header and stuff*/
-.about_me {
-    margin-left: 33px;
+#about_me, #personal_work, #contact_me {
     display: flex;
     flex-direction: row;
 }
 
-.about_me h2{
-    width:205px;
+.about_me_stuff{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-.about_me h2 img{
-    margin-top: 20px;
-}
-
-.about_me p{
+/*flexbox the design for the header and stuff*/
+#about_me p{
     font-size: 20px;
     padding: 40px 50px 60px 60px;
-    width: 80%;
     text-align: center;
-    
+}
+
+.about_me_stuff img{
+    height: 300px;
+    width: 200px;
 }
 
 /*Use flexbox for oganizing the personal content*/
-.personal_work{
-    display: flex;
-    flex-direction: row;
-}
 
 .work_container{
-    /* create flexbox */
     display: flex;
+    flex-direction: row;
+    padding: 20px 20px 0px 20px;
     /* instruct it to break onto next line if it runs out of space */
     flex-wrap: wrap;
     justify-content: space-between;
@@ -168,9 +152,8 @@ a, a:visited {
     /* set minimum heigh value so there's room */
     min-height: 250px;
     
-    /* rather than use position...use flexbox and create column instead of row */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
 } 
 
@@ -211,14 +194,11 @@ a, a:visited {
 
 
 /*CONTACT ME section of stuff*/
-.contact_me{
+#contact_me{
     display:flex;
-    align-items: baseline;
     flex-direction: row;
-}
-
-.contact_me h2{
-    
+    justify-content: space-between;
+    width: 100%;
 }
 
 .contacts{
@@ -227,8 +207,6 @@ a, a:visited {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     color: var(--black);
-    display: flex;
-    flex-direction: row;
 }
 
 .contacts ul {
@@ -240,6 +218,7 @@ a, a:visited {
 .contacts ul li {
     display: inline-block;
     margin-left: 25px;
+    margin-right: 30px
 }
 
 footer{
@@ -249,10 +228,20 @@ footer{
 
 /*---media query---*/
 
-@media screen and (max-width: 980px){
+@media screen and (max-width: 1066px){
+    #personal_work h2{
+        font-size:45px;
+    }
 
-    .personal_work h2{
-        margin-left: 37px;
+    .the_work:nth-child(1) {
+        min-height: 500px;
+    }
+}
+
+
+@media screen and (max-width: 980px){
+    #about_me h2, #personal_work h2, #contact_me h2{
+        font-size: 45px;
     }
 
     .header{
@@ -277,36 +266,54 @@ footer{
     }
 }
 
+@media screen and (max-width: 950px){
+    #about_me h2, #personal_work h2, #contact_me h2{
+        font-size: 35px;
+    }
+
+    #about_me p{
+        font-size: 16px;
+    }
+    
+    .about_me_stuff img{
+        height: 200px;
+        width: 130px;
+    }
+
+    .hero{
+        height:300px;
+    }
+
+}
+
 @media screen and (max-width: 768px){
     section{
         padding: 30px 15px;
     }
 
-    .content h2 {
-        font-size: 55px;
+    #about_me, #personal_work, #contact_me {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #about_me h2, #personal_work h2, #contact_me h2{
+        font-size: 45px;
         border-bottom: 8px solid;
         border-color: var(--chocolate-web);
         border-right: none;
-        padding: 60px 10px 20px 10px;
         text-align: center;
-        margin: 0 auto 35px auto;
-        width: 50%;
-
-    }
-
-    .about_me, .personal_work, .contact_me{
-        flex-direction: column;
-        align-items: center;
+        padding: 10px 10px 10px 10px;
     }
 
 }
 
 @media screen and (max-width: 575px){
     .hero{
-        height:400px;
+        height:200px;
     }
 
-    .contacts ul li{
-        margin-right: 30px;
+    #about_me p{
+        font-size: 13px;
     }
+
 }
