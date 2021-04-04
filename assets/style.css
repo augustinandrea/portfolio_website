@@ -309,6 +309,10 @@ footer{
         min-height: 200px;
     }
 
+    .contacts{
+        font-size: 12px;
+    }
+
 }
 
 @media screen and (max-width: 575px){
