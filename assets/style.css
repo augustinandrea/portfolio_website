@@ -146,6 +146,7 @@ a, a:visited {
     /* instruct it to break onto next line if it runs out of space */
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 }
 
 .the_work {
