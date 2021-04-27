@@ -170,10 +170,10 @@ article h2 {
     background-image: url(images/coming_out.png);
 }
 .the_work:nth-child(4) {
-    background-image: url(images/sudoku.png);
+    background-image: url(images/coding_quiz.png);
 }
 .the_work:nth-child(5) {
-    background-image: url(images/blackjack-hand.jpg);
+    background-image: url(images/work_scheduler.png);
 }
 
 /*When hovering over flexbox work, the color changes*/
