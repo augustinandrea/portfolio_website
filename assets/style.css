@@ -181,6 +181,9 @@ article h2 {
 .the_work:nth-child(7){
     background-image: url(images/bikewatch.png);
 }
+.the_work:nth-child(8){
+    background-image: url(images/barkbook.png);
+}
 
 /*When hovering over flexbox work, the color changes*/
 .the_work:hover{
