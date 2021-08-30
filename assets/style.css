@@ -185,6 +185,10 @@ article h2 {
     background-image: url(images/barkbook.png);
 }
 
+.the_work:nth-child(9){
+    background-image: url(images/garage_sale.png);
+}
+
 /*When hovering over flexbox work, the color changes*/
 .the_work:hover{
     box-shadow: 0 3000px rgba(255, 255, 255, 0) inset;
